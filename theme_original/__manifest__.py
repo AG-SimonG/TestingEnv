@@ -19,8 +19,8 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            '/theme_original/static/css/style.css',
-            '/theme_original/static/js/odoo_theme.js',
+            '/theme_original/static/src/css/style.css',
+            '/theme_original/static/src/js/odoo_theme.js',
         ],
     },
     'application': True,
