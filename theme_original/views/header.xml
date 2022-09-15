@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="custom_header" inherit_id="website.template_header_default">
+            <xpath expr="//t[@t-call='website.navbar']" position="replace">
+                <section class="top_nav">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="wrapper">
+                                    <div class="nav_center">
+                                        <a href="#">
+                                            <div class="heading">
+                                                <a href="/" t-attf-class="navbar-brand logo m-auto #{_link_class}">
+                                                    <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+                                                </a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="nav_right">
+                                        <ul class="nav navbar-nav o_header_centered_logo justify-content-end">
+                                            <!-- Sign In -->
+                                            <t t-call="portal.placeholder_user_sign_in">
+                                                <t t-set="_item_class" t-value="'nav-item ml-3'"/>
+                                                <t t-set="_link_class" t-value="'nav-link'"/>
+                                            </t>
+                                            <!-- User Dropdown -->
+                                            <t t-call="portal.user_dropdown">
+                                                <t t-set="_icon" t-value="true"/>
+                                                <t t-set="_item_class" t-value="'nav-item dropdown ml-3'"/>
+                                                <t t-set="_link_class" t-value="'nav-link'"/>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="navigation">
+                    <div class="container">
+                        <nav class="navbar navbar-expand-lg navbar-dark">
+                            <div class="navbar-brand waves-effect">
+                                <div class="footer_icon">
+                                    <a href="#"><span class="fa fa-pinterest"/></a>
+                                    <a href="#"><span class="fa fa-linkedin"/></a>
+                                    <a href="#"><span class="fa fa-facebook"/></a>
+                                    <a href="#"><span class="fa fa-twitter"/></a>
+                                    <span class="link_top">SHARE</span>
+                                </div>
+                            </div>
+                            <button class="navbar-toggler waves-effect" type="button" data-toggle="collapse"
+                                    data-target="#main_nav">
+                                <span class="navbar-toggler-icon"/>
+                            </button>
+                            <div class="collapse navbar-collapse" id="main_nav">
+                                <ul class="navbar-nav m-auto">
+                                    <t t-call="website.navbar_nav">
+                                        <t t-set="_nav_class" t-valuef="mx-auto"/>
+                                        <!-- Menu -->
+                                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                            <t t-call="website.submenu">
+                                                <t t-set="item_class" t-valuef="nav-item"/>
+                                                <t t-set="link_class" t-valuef="nav-link"/>
+                                            </t>
+                                        </t>
+                                    </t>
+                                    <t t-call="website_sale.header_cart_link">
+                                    <t t-set="_icon" t-value="True"/>
+                                    <t t-set="_item_class" t-value="'nav-item mx-lg-3'"/>
+                                    <t t-set="_link_class" t-value="'nav-link'"/>
+                                </t>
+                                </ul>
+                            </div>
+
+                            <!-- navbar-collapse.// -->
+                            <div class="help-line text-center">
+                                <a href="tel:+33123456789"><i class="fa fa-headphones">/</i> +33 1 23 45 67 89</a>
+                            </div>
+                        </nav>
+                    </div>
+                </section>
+            </xpath>
+        </template>
