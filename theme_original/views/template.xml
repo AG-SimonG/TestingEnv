@@ -1,0 +1,16 @@
+<xml version="1.0" encoding="utf-8">
+<odoo>
+    <template id="title" name="title">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section class="s_text_block">
+                        <div class="container">
+                            <h1>Odoo Training Theme</h1>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
