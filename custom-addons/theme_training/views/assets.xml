@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <xpath expr="." position="inside">
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&amp;display=swap" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet"/>
+            </xpath>
+    </data>
+</odoo>
